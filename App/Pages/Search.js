@@ -1,5 +1,5 @@
 import { View,StyleSheet, Image } from "react-native"
-import { Box, HStack, VStack, ScrollView, Text } from "native-base"
+import { Box, HStack, VStack, ScrollView, Text, Container } from "native-base"
 import { Searchbar } from 'react-native-paper';
 import { Icon } from "react-native-elements";
 
@@ -41,7 +41,7 @@ export default function Search({navigation}) {
   
         return(
             <View style={styles.container}>
-                <Box marginTop="10">
+                <Box marginTop="20">
                     <Text style={styles.facilities}>Facilities</Text>
                 </Box>
                 <HStack>    
@@ -59,8 +59,8 @@ export default function Search({navigation}) {
                             type="material-icons"
                             size={25}
                             color="red"
-                            onPress={() =>
-                                navigation.navigate("Mapview")
+                            onPress={() => 
+                                navigation.navigate("Facilities")
                             }
                         />
                         <Text>Map View</Text>
@@ -68,7 +68,7 @@ export default function Search({navigation}) {
                 </HStack>
                 <View>
                     <Text style={styles.filter}>Filter By Amenity</Text>
-                        <Box marginTop="30" marginBottom="30" marginLeft="5">
+                        <Container flex="1">
                             <ScrollView h="100">
                                 <VStack>
                                     <HStack>
@@ -196,7 +196,7 @@ export default function Search({navigation}) {
                                     </HStack>
                                 </VStack>
                             </ScrollView>
-                        </Box>   
+                        </Container>   
                     </View>
                 </View>
             ) 
@@ -204,7 +204,7 @@ export default function Search({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center"
+        alignItems: "center",
     },
 
     view: {
@@ -215,7 +215,8 @@ const styles = StyleSheet.create({
 
     facilities: {
         fontWeight: "bold", 
-        fontSize: 26
+        fontSize: 26,
+        paddingTop: 5
     },
 
     map: {

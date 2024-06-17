@@ -78,9 +78,9 @@ export default function App() {
   return (
     <NativeBaseProvider>
        <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
-                <Stack.Screen name="Mapview" component={MapView} options={{ headerShown: false }} />
+                <Stack.Screen name="Facilities" component={MapView}  />
                 <Stack.Screen name="Search" component={Search} options={{ headerShown: false }} />
             </Stack.Navigator> 
         </NavigationContainer>
